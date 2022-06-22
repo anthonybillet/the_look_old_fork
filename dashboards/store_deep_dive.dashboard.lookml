@@ -799,7 +799,7 @@
     dynamic_fields: [{table_calculation: missing_stock_value, label: Missing Stock
           Value, expression: 'sum(${stock_forecasting_explore_base.stock_difference_value})',
         value_format: !!null '', value_format_name: usd_0, _kind_hint: measure, _type_hint: number}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -859,7 +859,7 @@
     dynamic_fields: [{table_calculation: missing_stock_value, label: Missing Stock
           Value, expression: 'sum(${stock_forecasting_explore_base.stock_difference_value})',
         value_format: !!null '', value_format_name: usd_0, _kind_hint: measure, _type_hint: number}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false

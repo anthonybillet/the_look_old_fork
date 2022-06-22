@@ -3,7 +3,7 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  query_timezone: user_timezone
+  #query_timezone: user_timezone
   embed_style:
     background_color: "#f7f7f7"
     show_title: true
@@ -30,7 +30,7 @@
     column_limit: 50
     dynamic_fields: [{table_calculation: goal, label: Goal, expression: '10000', value_format: !!null '',
         value_format_name: decimal_0, _kind_hint: dimension, _type_hint: number}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     custom_color_enabled: false
     show_single_value_title: true
     show_comparison: true
@@ -76,7 +76,7 @@
     column_limit: 50
     dynamic_fields: [{table_calculation: date, label: date, expression: now(), value_format: !!null '',
         value_format_name: !!null '', _kind_hint: dimension, is_disabled: true}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     custom_color_enabled: false
     show_single_value_title: true
     show_comparison: false
@@ -161,7 +161,7 @@
     sorts: [products.category, order_items.created_date desc]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: true
@@ -240,7 +240,7 @@
     sorts: [events.event_day_of_week]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -326,7 +326,7 @@
     dynamic_fields: [{table_calculation: pct_cohort_still_active, label: Pct Cohort
           Still Active, expression: "${users.count} / max(${users.count})", value_format: !!null '',
         value_format_name: percent_0, _kind_hint: measure, _type_hint: number}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -397,7 +397,7 @@
     sorts: [order_items.created_year desc 0, order_items.created_month_name]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -471,7 +471,7 @@
     sorts: [users.gender 0, order_items.total_sale_price desc 0]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     map_plot_mode: points
     heatmap_gridlines: true
     heatmap_gridlines_empty: false
@@ -555,7 +555,7 @@
     sorts: [user_order_facts.lifetime_orders_tier__sort_, users.traffic_source]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -633,7 +633,7 @@
         desc 0]
     limit: 500
     column_limit: 15
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_value_labels: true
     font_size: 15
     hide_legend: false
@@ -690,7 +690,7 @@
         desc]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -751,7 +751,7 @@
     column_limit: 50
     dynamic_fields: [{table_calculation: percent_change, label: Percent Change, expression: "${order_items.count}/offset(${order_items.count},1)\
           \ - 1", value_format: !!null '', value_format_name: percent_0}]
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_comparison: true
     comparison_type: change
     comparison_reverse_colors: false
@@ -823,7 +823,7 @@
     limit: 10
     column_limit: 50
     row_total: right
-    query_timezone: user_timezone
+    #query_timezone: user_timezone
     show_view_names: false
     show_row_numbers: false
     transpose: false

@@ -2,7 +2,7 @@
   title: Brand Lookup
   layout: newspaper
   preferred_viewer: dashboards-next
-  query_timezone: user_timezone
+  #query_timezone: user_timezone
   embed_style:
     background_color: "#f6f8fa"
     show_title: true
@@ -26,7 +26,7 @@
     filters: {}
     sorts: [order_items.order_count desc]
     limit: 500
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     listen:
@@ -46,7 +46,7 @@
     filters: {}
     sorts: [users.count desc]
     limit: 500
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     note_state: expanded
@@ -70,7 +70,7 @@
     sorts: [order_items.average_sale_price desc]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     note_state: collapsed
@@ -96,7 +96,7 @@
     sorts: [events.count desc 1, users.traffic_source]
     limit: 20
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_value_labels: true
     font_size: 12
     colors: ["#64518A", "#8D7FB9", "#EA8A2F", "#F2B431", "#2DA5DE", "#57BEBE", "#7F7977",
@@ -144,7 +144,7 @@
     sorts: [sessions.count_cart_or_later desc]
     limit: 8
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -223,7 +223,7 @@
     sorts: [sessions.count desc]
     limit: 15
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: true
     show_row_numbers: true
     transpose: false
@@ -262,7 +262,7 @@
     filters: {}
     sorts: [order_items.total_sale_price desc]
     limit: 500
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -324,7 +324,7 @@
     sorts: [order_items.count desc]
     limit: 15
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     show_row_numbers: true
     truncate_column_names: false
@@ -357,7 +357,7 @@
     sorts: [user_order_facts.lifetime_orders_tier 0, events.event_hour_of_day]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -425,7 +425,7 @@
       product_b.brand: '"Levi''s"'
     sorts: [affinity.avg_order_affinity desc]
     limit: 15
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     show_row_numbers: true
     transpose: false
@@ -516,7 +516,7 @@
     sorts: [affinity.combined_affinity desc]
     limit: 15
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: true
     show_row_numbers: true
     transpose: false
@@ -590,7 +590,7 @@
       order_items.months_since_signup: "<=18"
     sorts: [order_items.months_since_signup]
     limit: 500
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -651,7 +651,7 @@
     limit: 500
     column_limit: 50
     row_total: right
-    query_timezone: user_timezone
+    #query_timezone: user_timezone
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false

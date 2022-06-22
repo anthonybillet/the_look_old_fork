@@ -1,4 +1,5 @@
 include: "/views/**/*.view" # include all the views
+include: "/models/thelook_ant.model.lkml"
 
 # Place in `thelook` model
 explore: +order_items {

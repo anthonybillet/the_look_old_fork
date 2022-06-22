@@ -23,7 +23,7 @@
     sorts: [order_items.created_date desc, order_items.status]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     color_palette: Custom
     limit_displayed_rows: false
@@ -69,7 +69,7 @@
     sorts: [order_items.days_to_process desc]
     limit: 25
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     show_row_numbers: true
     transpose: false
@@ -231,7 +231,7 @@
     sorts: [inventory_items.days_in_inventory_tier]
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     stacking: normal
     show_value_labels: true
     label_density: 25
@@ -277,7 +277,7 @@
       order_items.status: Processing
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     color_palette: Custom
     limit_displayed_rows: false
@@ -319,7 +319,7 @@
       order_items.status: Shipped
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     color_palette: Custom
     limit_displayed_rows: false
@@ -361,7 +361,7 @@
       order_items.status: Processing
     limit: 500
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_view_names: false
     color_palette: Custom
     limit_displayed_rows: false

@@ -23,7 +23,7 @@
     sorts: [users.zip]
     limit: 1
     column_limit: 50
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     show_null_labels: false
     show_view_names: false
     show_row_numbers: true
@@ -108,7 +108,7 @@
       order_items.created_date: 99 years
     sorts: [order_items.count desc]
     limit: 500
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     value_labels: legend
     label_type: labPer
     colors: ["#64518A", "#8D7FB9", "#EA8A2F", "#F2B431", "#2DA5DE", "#57BEBE", "#7F7977",
@@ -137,7 +137,7 @@
     fields: [users.zip, users.count]
     sorts: [users.created_month desc, users.zip]
     limit: 1
-    query_timezone: America/Los_Angeles
+    #query_timezone: America/Los_Angeles
     map: usa
     map_projection: ''
     show_view_names: true
