@@ -11,247 +11,6 @@ view: order_items {
     value_format: "00000"
   }
 
-  dimension: fake_reading1 {
-    view_label: "Z) Fake Readings"
-    type: number
-    sql: ${sale_price} * 20 ;;
-  }
-
-  dimension: fake_reading2 {
-    view_label: "Z) Fake Readings"
-    type: number
-    sql: ${sale_price} ;;
-  }
-
-  dimension: fake_reading3 {
-    view_label: "Z) Fake Readings"
-    type: number
-    sql: ${gross_margin} ;;
-  }
-
-  measure: avg_fake_reading1 {
-    view_label: "Z) Fake Readings"
-    type: average
-    sql: ${fake_reading1} ;;
-  }
-
-  measure: avg_fake_reading2 {
-    view_label: "Z) Fake Readings"
-    type: average
-    sql: ${fake_reading2} ;;
-  }
-
-  measure: avg_fake_reading3 {
-    view_label: "Z) Fake Readings"
-    type: average
-    sql: ${fake_reading3} ;;
-  }
-
-  dimension: reading1_thresholds {
-    type: string
-    sql: CASE WHEN ${fake_reading1} >= 2000 THEN 'High'
-              WHEN ${fake_reading1} < 200 THEN 'Low'
-              ELSE 'Normal' END;;
-  }
-  dimension: reading2_thresholds {
-    type: string
-    sql: CASE WHEN ${fake_reading2} >= 100 THEN 'High'
-              WHEN ${fake_reading2} < 10 THEN 'Low'
-              ELSE 'Normal' END;;
-  }
-  dimension: reading3_thresholds {
-    type: string
-    sql: CASE WHEN ${fake_reading3} >= 100 THEN 'High'
-              WHEN ${fake_reading3} < 10 THEN 'Low'
-              ELSE 'Normal' END;;
-  }
-
-  measure: avg_fake_reading1_high {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 High"
-    type: average
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "High"]
-  }
-
-  measure: avg_fake_reading1_Normal {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Normal"
-    type: average
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Normal"]
-  }
-
-  measure: avg_fake_reading1_Low {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Low"
-    type: average
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Low"]
-  }
-
-  measure: median_fake_reading1_high {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 High (Median)"
-    type: median
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "High"]
-  }
-
-  measure: median_fake_reading1_Normal {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Normal (Median)"
-    type: median
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Normal"]
-  }
-
-  measure: median_fake_reading1_Low {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Low (Median)"
-    type: median
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Low"]
-  }
-
-  measure: 25percentile_fake_reading1_high {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 High (25th Percentile)"
-    type: percentile
-    percentile: 25
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "High"]
-  }
-
-  measure: 25percentile_fake_reading1_Normal {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Normal (25th Percentile)"
-    type: percentile
-    percentile: 25
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Normal"]
-  }
-
-  measure: 25percentile_fake_reading1_Low {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Low (25th Percentile)"
-    type: percentile
-    percentile: 25
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Low"]
-  }
-
-  measure: 75percentile_fake_reading1_high {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 High (75th Percentile)"
-    type: percentile
-    percentile: 75
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "High"]
-  }
-
-  measure: 75percentile_fake_reading1_Normal {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Normal (75th Percentile)"
-    type: percentile
-    percentile: 75
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Normal"]
-  }
-
-  measure: 75percentile_fake_reading1_Low {
-    group_label: "Reading 1"
-    view_label: "Z) Fake Readings"
-    label: "Reading 1 Low (75th Percentile)"
-    type: percentile
-    percentile: 75
-    sql: ${fake_reading1} ;;
-    value_format_name: decimal_2
-    filters: [reading1_thresholds: "Low"]
-  }
-
-  measure: avg_fake_reading2_high {
-    group_label: "Reading 2"
-    view_label: "Z) Fake Readings"
-    label: "Reading 2 High"
-    type: average
-    sql: ${fake_reading2} ;;
-    value_format_name: decimal_2
-    filters: [reading2_thresholds: "High"]
-  }
-
-  measure: avg_fake_reading2_Normal {
-    group_label: "Reading 2"
-    view_label: "Z) Fake Readings"
-    label: "Reading 2 Normal"
-    type: average
-    sql: ${fake_reading2} ;;
-    value_format_name: decimal_2
-    filters: [reading2_thresholds: "Normal"]
-  }
-
-  measure: avg_fake_reading2_Low {
-    group_label: "Reading 2"
-    view_label: "Z) Fake Readings"
-    label: "Reading 2 Low"
-    type: average
-    sql: ${fake_reading2} ;;
-    value_format_name: decimal_2
-    filters: [reading2_thresholds: "Low"]
-  }
-
-  measure: avg_fake_reading3_high {
-    group_label: "Reading 3"
-    view_label: "Z) Fake Readings"
-    label: "Reading 3 High"
-    type: average
-    sql: ${fake_reading3} ;;
-    value_format_name: decimal_2
-    filters: [reading3_thresholds: "High"]
-  }
-
-  measure: avg_fake_reading3_Normal {
-    group_label: "Reading 3"
-    view_label: "Z) Fake Readings"
-    label: "Reading 3 Normal"
-    type: average
-    sql: ${fake_reading3} ;;
-    value_format_name: decimal_2
-    filters: [reading3_thresholds: "Normal"]
-  }
-
-  measure: avg_fake_reading3_Low {
-    group_label: "Reading 3"
-    view_label: "Z) Fake Readings"
-    label: "Reading 3 Low"
-    type: average
-    sql: ${fake_reading3} ;;
-    value_format_name: decimal_2
-    filters: [reading3_thresholds: "Low"]
-  }
-
   dimension: inventory_item_id {
     label: "Inventory Item ID"
     type: number
@@ -353,45 +112,45 @@ view: order_items {
         }
       }
     }
-    action: {
-      label: "Create Order Form"
-      url: "https://hooks.zapier.com/hooks/catch/2813548/oosxkej/"
-      form_param: {
-        name: "Order ID"
-        type: string
-        default: "{{ order_id._value }}"
-      }
+    # action: {
+    #   label: "Create Order Form"
+    #   url: "https://hooks.zapier.com/hooks/catch/2813548/oosxkej/"
+    #   form_param: {
+    #     name: "Order ID"
+    #     type: string
+    #     default: "{{ order_id._value }}"
+    #   }
 
-      form_param: {
-        name: "Name"
-        type: string
-        default: "{{ users.name._value }}"
-      }
+    #   form_param: {
+    #     name: "Name"
+    #     type: string
+    #     default: "{{ users.name._value }}"
+    #   }
 
-      form_param: {
-        name: "Email"
-        type: string
-        default: "{{ _user_attributes.email }}"
-      }
+    #   form_param: {
+    #     name: "Email"
+    #     type: string
+    #     default: "{{ _user_attributes.email }}"
+    #   }
 
-      form_param: {
-        name: "Item"
-        type: string
-        default: "{{ products.item_name._value }}"
-      }
+    #   form_param: {
+    #     name: "Item"
+    #     type: string
+    #     default: "{{ products.item_name._value }}"
+    #   }
 
-      form_param: {
-        name: "Price"
-        type: string
-        default: "{{ order_items.sale_price._rendered_value }}"
-      }
+    #   form_param: {
+    #     name: "Price"
+    #     type: string
+    #     default: "{{ order_items.sale_price._rendered_value }}"
+    #   }
 
-      form_param: {
-        name: "Comments"
-        type: string
-        default: " Hi {{ users.first_name._value }}, thanks for your business!"
-      }
-    }
+    #   form_param: {
+    #     name: "Comments"
+    #     type: string
+    #     default: " Hi {{ users.first_name._value }}, thanks for your business!"
+    #   }
+    # }
     value_format: "00000"
   }
 
