@@ -39,7 +39,8 @@ view: order_items {
     filters:
     {field:created_date
       value: "28 days"
-    }}
+    }
+  }
 
   measure: order_count {
     view_label: "Orders"
@@ -179,9 +180,20 @@ view: order_items {
 
   dimension_group: created {
     type: time
-    timeframes: [time, hour, date, week, month, year, hour_of_day, day_of_week, month_num, raw, week_of_year,month_name]
+    timeframes: [time, day_of_year, hour, date, week, month, year, hour_of_day, day_of_week, month_num, raw, week_of_year,month_name]
     sql: ${TABLE}.created_at ;;
 
+  }
+
+  dimension_group: current {
+    type: time
+    hidden: yes
+    sql: CURRENT_TIMESTAMP() ;;
+  }
+
+  dimension: is_year_to_date {
+    type: yesno
+    sql: ${created_day_of_year} <= ${current_day_of_year} ;;
   }
 
   dimension: reporting_period {
