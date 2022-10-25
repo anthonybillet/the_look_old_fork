@@ -250,6 +250,7 @@ view: users {
   }
 
   dimension: user_email {
+    required_access_grants: [can_see_email]
     type: string
     label: "{% if _user_attributes['can_see_sensitive_data'] == 'yes' %} User Email
     {% else %} User Email (Hashed due to insufficient permissions)
