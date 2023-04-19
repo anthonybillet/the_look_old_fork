@@ -99,6 +99,12 @@ explore: order_items {
     sql_on: ${distribution_centers.id} = ${inventory_items.product_distribution_center_id} ;;
     relationship: many_to_one
   }
+
+  join: user_facts_for_follow {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${users.id} = ${user_facts_for_follow.users_id} ;;
+  }
   #roll up table for commonly used queries
   # aggregate_table: simple_rollup {
   #   query: {

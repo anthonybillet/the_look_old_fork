@@ -273,6 +273,14 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension: sale_price_w_negatives {
+    label: "Sale Price (w/ negatives)"
+    description: "Sale Prices is Negative is order us Cancelled or Returned"
+    type: number
+    value_format_name: usd
+    sql: CASE WHEN ${status} IN ('Cancelled', 'Returned') THEN -1*${sale_price} ELSE ${sale_price} END  ;;
+  }
+
   dimension: gross_margin {
     label: "Gross Margin"
     type: number
@@ -298,8 +306,61 @@ view: order_items {
   measure: total_sale_price {
     label: "Total Sale Price"
     type: sum
-    value_format_name: usd
+    value_format_name: usd_0
     sql: ${sale_price} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: total_sale_price_w_negatives {
+    label: "Total Sale Price (w/Negatives)"
+    description: "Sale Prices is Negative is order us Cancelled or Returned"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    drill_fields: [detail*]
+  }
+  measure: total_cancelled_sales {
+    group_label: "Total Sales Categories"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    filters: [status: "Cancelled"]
+    drill_fields: [detail*]
+  }
+
+  measure: total_returned_sales {
+    group_label: "Total Sales Categories"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    filters: [status: "Returned"]
+    drill_fields: [detail*]
+  }
+
+  measure: total_completed_sales {
+    group_label: "Total Sales Categories"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    filters: [status: "Completed"]
+    drill_fields: [detail*]
+  }
+
+  measure: total_processing_sales {
+    group_label: "Total Sales Categories"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    filters: [status: "Processing"]
+    drill_fields: [detail*]
+  }
+
+  measure: total_shipped_sales {
+    group_label: "Total Sales Categories"
+    type: sum
+    value_format_name: usd_0
+    sql: ${sale_price_w_negatives} ;;
+    filters: [status: "Shipped"]
     drill_fields: [detail*]
   }
 
