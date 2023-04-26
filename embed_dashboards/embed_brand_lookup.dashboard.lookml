@@ -1,5 +1,5 @@
 - dashboard: brand_lookup_embed
-  title: Brand Lookup
+  title: Brand Lookup Embed
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
