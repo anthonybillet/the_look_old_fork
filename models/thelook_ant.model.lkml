@@ -3,8 +3,8 @@ connection: "looker-private-demo"
 label: "Z) AntBillet the Look Fork - Ecomm"
 include: "/queries/queries*.view" # includes all queries refinements
 include: "/views/**/*.view" # include all the views
-include: "/dashboards/*.dashboard.lookml" # include all the views
-
+include: "/dashboards/*.dashboard.lookml"
+include: "/embed_dashboards/*.dashboard.lookml"
 ############ Model Configuration #############
 
 datagroup: ecommerce_etl {
@@ -28,10 +28,10 @@ access_grant: can_see_gross_margin {
 explore: products_embed {
   from: products
 
-  access_filter: {
-    user_attribute: client_name
-    field: brand
-  }
+  # access_filter: {
+  #   user_attribute: client_name
+  #   field: brand
+  # }
 }
 
 explore: order_items {

@@ -1,20 +1,14 @@
-- dashboard: brand_lookup
-  title: Brand Lookup
+- dashboard: embed_brand_lookup
+  title: Brand Lookup Embed
   layout: newspaper
   preferred_viewer: dashboards-next
-  #query_timezone: user_timezone
+  preferred_slug: DX7n15I063qUpLcmb0Jn6c
   embed_style:
     background_color: "#f6f8fa"
     show_title: true
     title_color: "#3a4245"
     show_filters_bar: true
     tile_text_color: "#3a4245"
-    #tile_separator_color: "#faf3f3"
-    #tile_border_radius: 5
-    #show_tile_shadow: false
-    # tile_separator_color: "#faf3f3"
-    # tile_border_radius: 5
-    # show_tile_shadow: false
     text_tile_text_color: "#556d7a"
   elements:
   - title: Total Orders
@@ -23,10 +17,8 @@
     explore: order_items
     type: single_value
     fields: [order_items.order_count]
-    filters: {}
     sorts: [order_items.order_count desc]
     limit: 500
-    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     listen:
@@ -43,10 +35,8 @@
     explore: order_items
     type: single_value
     fields: [users.count]
-    filters: {}
     sorts: [users.count desc]
     limit: 500
-    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     note_state: expanded
@@ -66,11 +56,9 @@
     explore: order_items
     type: single_value
     fields: [order_items.average_sale_price]
-    filters: {}
     sorts: [order_items.average_sale_price desc]
     limit: 500
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     font_size: medium
     text_color: black
     note_state: collapsed
@@ -96,7 +84,6 @@
     sorts: [events.count desc 1, users.traffic_source]
     limit: 20
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     show_value_labels: true
     font_size: 12
     colors: ["#64518A", "#8D7FB9", "#EA8A2F", "#F2B431", "#2DA5DE", "#57BEBE", "#7F7977",
@@ -144,7 +131,6 @@
     sorts: [sessions.count_cart_or_later desc]
     limit: 8
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -223,7 +209,6 @@
     sorts: [sessions.count desc]
     limit: 15
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     show_view_names: true
     show_row_numbers: true
     transpose: false
@@ -259,10 +244,8 @@
     explore: order_items
     type: looker_line
     fields: [order_items.created_date, order_items.total_sale_price, order_items.average_sale_price]
-    filters: {}
     sorts: [order_items.total_sale_price desc]
     limit: 500
-    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -320,11 +303,9 @@
     type: looker_grid
     fields: [users.name, users.email, order_items.count, order_items.total_sale_price,
       users.state]
-    filters: {}
     sorts: [order_items.count desc]
     limit: 15
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     show_view_names: false
     show_row_numbers: true
     truncate_column_names: false
@@ -353,11 +334,9 @@
     fields: [user_order_facts.lifetime_orders_tier, sessions.count, events.event_hour_of_day]
     pivots: [user_order_facts.lifetime_orders_tier]
     fill_fields: [events.event_hour_of_day]
-    filters: {}
     sorts: [user_order_facts.lifetime_orders_tier 0, events.event_hour_of_day]
     limit: 500
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -425,7 +404,6 @@
       product_b.brand: '"Levi''s"'
     sorts: [affinity.avg_order_affinity desc]
     limit: 15
-    #query_timezone: America/Los_Angeles
     show_view_names: false
     show_row_numbers: true
     transpose: false
@@ -516,7 +494,6 @@
     sorts: [affinity.combined_affinity desc]
     limit: 15
     column_limit: 50
-    #query_timezone: America/Los_Angeles
     show_view_names: true
     show_row_numbers: true
     transpose: false
@@ -590,7 +567,6 @@
       order_items.months_since_signup: "<=18"
     sorts: [order_items.months_since_signup]
     limit: 500
-    #query_timezone: America/Los_Angeles
     x_axis_gridlines: false
     y_axis_gridlines: false
     show_view_names: false
@@ -651,7 +627,6 @@
     limit: 500
     column_limit: 50
     row_total: right
-    #query_timezone: user_timezone
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -743,6 +718,9 @@
     default_value: Calvin Klein
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: thelook_ant
     explore: order_items
     listens_to_filters: []
@@ -753,12 +731,18 @@
     default_value: 90 days
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
   - name: State
     title: State
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: thelook_ant
     explore: order_items
     listens_to_filters: []
