@@ -28,7 +28,7 @@
       State: users.state
     row: 2
     col: 12
-    width: 12
+    width: 4
     height: 3
   - title: Total Customers
     name: Total Customers
@@ -71,7 +71,7 @@
       State: users.state
     row: 2
     col: 4
-    width: 8
+    width: 4
     height: 3
   - title: Brand Traffic by Source, OS
     name: Brand Traffic by Source, OS
@@ -621,7 +621,7 @@
     name: Most Popular Categories
     model: thelook_ant
     explore: order_items
-    type: looker_area
+    type: looker_column
     fields: [products.category, products.department, order_items.total_sale_price]
     pivots: [products.department]
     sorts: [products.department 0, order_items.total_sale_price desc 2]
@@ -650,13 +650,13 @@
     label_density: 25
     x_axis_scale: auto
     y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
+    ordering: none
+    show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    ordering: none
-    show_null_labels: false
+    show_null_points: true
+    interpolation: linear
     color_application:
       collection_id: google
       palette_id: google-categorical-0
