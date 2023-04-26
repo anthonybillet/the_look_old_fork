@@ -1,7 +1,8 @@
-- dashboard: embed_brand_lookup
-  title: Brand Lookup Embed
+- dashboard: brand_lookup_embed
+  title: Brand Lookup
   layout: newspaper
   preferred_viewer: dashboards-next
+  description: ''
   preferred_slug: DX7n15I063qUpLcmb0Jn6c
   embed_style:
     background_color: "#f6f8fa"
@@ -26,8 +27,8 @@
       Date: order_items.created_date
       State: users.state
     row: 2
-    col: 8
-    width: 4
+    col: 12
+    width: 12
     height: 3
   - title: Total Customers
     name: Total Customers
@@ -70,7 +71,7 @@
       State: users.state
     row: 2
     col: 4
-    width: 4
+    width: 8
     height: 3
   - title: Brand Traffic by Source, OS
     name: Brand Traffic by Source, OS
@@ -115,7 +116,7 @@
       Brand Name: product_viewed.brand
       Date: events.event_date
       State: users.state
-    row: 28
+    row: 29
     col: 14
     width: 10
     height: 11
@@ -194,7 +195,7 @@
       Brand Name: product_viewed.brand
       Date: events.event_date
       State: users.state
-    row: 28
+    row: 29
     col: 0
     width: 14
     height: 6
@@ -234,7 +235,7 @@
       Brand Name: product_viewed.brand
       Date: events.event_date
       State: users.state
-    row: 42
+    row: 43
     col: 12
     width: 12
     height: 8
@@ -292,10 +293,10 @@
       Brand Name: products.brand
       Date: order_items.created_date
       State: users.state
-    row: 2
+    row: 5
     col: 12
     width: 12
-    height: 7
+    height: 5
   - title: Top Purchasers of Brand
     name: Top Purchasers of Brand
     model: thelook_ant
@@ -322,7 +323,7 @@
       Brand Name: products.brand
       Date: order_items.created_date
       State: users.state
-    row: 42
+    row: 43
     col: 0
     width: 12
     height: 8
@@ -387,7 +388,7 @@
       Brand Name: product_viewed.brand
       Date: events.event_date
       State: users.state
-    row: 34
+    row: 35
     col: 0
     width: 14
     height: 5
@@ -477,7 +478,7 @@
     defaults_version: 1
     listen:
       Brand Name: product_a.brand
-    row: 18
+    row: 19
     col: 0
     width: 14
     height: 8
@@ -552,7 +553,7 @@
     series_types: {}
     listen:
       Brand Name: product_a.brand
-    row: 18
+    row: 19
     col: 14
     width: 10
     height: 8
@@ -612,7 +613,7 @@
       Brand Name: order_items_share_of_wallet.brand
       Date: order_items.created_date
       State: users.state
-    row: 9
+    row: 10
     col: 12
     width: 12
     height: 6
@@ -620,7 +621,7 @@
     name: Most Popular Categories
     model: thelook_ant
     explore: order_items
-    type: looker_column
+    type: looker_area
     fields: [products.category, products.department, order_items.total_sale_price]
     pivots: [products.department]
     sorts: [products.department 0, order_items.total_sale_price desc 2]
@@ -649,11 +650,13 @@
     label_density: 25
     x_axis_scale: auto
     y_axis_combined: true
-    ordering: none
-    show_null_labels: false
+    show_null_points: true
+    interpolation: linear
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
+    ordering: none
+    show_null_labels: false
     color_application:
       collection_id: google
       palette_id: google-categorical-0
@@ -670,11 +673,14 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
+    value_labels: legend
+    label_type: labPer
+    font_size: 12
     listen: {}
     row: 5
     col: 0
     width: 12
-    height: 10
+    height: 11
   - name: "<span class='fa fa-dollar'> Brand Overview </span>"
     type: text
     title_text: "<span class='fa fa-dollar'> Brand Overview </span>"
@@ -689,7 +695,7 @@
     subtitle_text: What products and brands have the highest affinity?
     body_text: "**Recommended Action** Plan advertising campaign to recommend products\
       \ to users based on affinity"
-    row: 15
+    row: 16
     col: 0
     width: 24
     height: 3
@@ -697,7 +703,7 @@
     type: text
     title_text: "<span class='fa fa-laptop'> Web Analytics </span>"
     subtitle_text: How are users interacting with our website?
-    row: 26
+    row: 27
     col: 0
     width: 24
     height: 2
@@ -707,7 +713,7 @@
     subtitle_text: Who are our highest valued customers?
     body_text: "**Recommended Action** Explore from here to see what products a user\
       \ has purchased and include them in a targeted advertising campaign"
-    row: 39
+    row: 40
     col: 0
     width: 24
     height: 3
