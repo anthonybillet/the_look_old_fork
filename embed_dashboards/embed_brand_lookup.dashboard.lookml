@@ -27,7 +27,7 @@
       Date: order_items.created_date
       State: users.state
     row: 2
-    col: 12
+    col: 4
     width: 4
     height: 3
   - title: Total Customers
@@ -70,7 +70,7 @@
       Date: order_items.created_date
       State: users.state
     row: 2
-    col: 4
+    col: 8
     width: 4
     height: 3
   - title: Brand Traffic by Source, OS
@@ -293,7 +293,7 @@
       Brand Name: products.brand
       Date: order_items.created_date
       State: users.state
-    row: 5
+    row: 2
     col: 12
     width: 12
     height: 5
@@ -613,7 +613,7 @@
       Brand Name: order_items_share_of_wallet.brand
       Date: order_items.created_date
       State: users.state
-    row: 10
+    row: 7
     col: 12
     width: 12
     height: 6
