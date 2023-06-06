@@ -49,6 +49,7 @@ view: order_items {
     sql: ${order_id} ;;
   }
 
+
   measure: first_purchase_count {
     view_label: "Orders"
     type: count_distinct
