@@ -3,6 +3,14 @@ view: order_items {
   view_label: "Order Items"
   ########## IDs, Foreign Keys, Counts ###########
 
+
+  dimension: a_silly_branch_test2 {
+    view_label: "A) Silly Silly"
+    type: string
+    sql: 'Silly Branch in Prod2' ;;
+  }
+
+
   dimension: a_silly_branch_test {
     view_label: "A) Silly Silly"
     type: string
