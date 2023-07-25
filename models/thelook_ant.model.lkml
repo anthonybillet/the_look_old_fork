@@ -27,11 +27,10 @@ access_grant: can_see_gross_margin {
 
 explore: products_embed {
   from: products
-
-  # access_filter: {
-  #   user_attribute: client_name
-  #   field: brand
-  # }
+  access_filter: {
+    user_attribute: client_name
+    field: brand
+  }
 }
 
 explore: order_items {
