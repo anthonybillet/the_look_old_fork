@@ -36,10 +36,11 @@ explore: products_embed {
 
 explore: order_items {
 
-  access_filter: {
-    field: products.brand
-    user_attribute: client_name
-  }
+  # access_filter: {
+  #   field: products.brand
+  #   user_attribute: client_name
+  # }
+
 
   label: "(1) Orders, Items and Users"
   view_name: order_items
