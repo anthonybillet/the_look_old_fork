@@ -114,6 +114,7 @@ explore: order_items {
 
 explore: events {
   label: "(2) Web Event Data"
+  fields: [ALL_FIELDS*, -users.sample_html_arrows]
 
   join: sessions {
     view_label: "Sessions"
@@ -165,7 +166,7 @@ explore: events {
 
 explore: sessions {
   label: "(3) Web Session Data"
-
+  fields: [ALL_FIELDS*, -users.sample_html_arrows]
   join: events {
     view_label: "Events"
     type: left_outer

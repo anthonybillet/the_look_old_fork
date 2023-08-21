@@ -5,6 +5,7 @@ include: "/views/**/*.view" # include all the views
 # Web Analytics Tool Explore
 ########################################################################################
 explore: data_tool {
+  fields: [ALL_FIELDS*, -users.sample_html_arrows]
   hidden: yes
   label: "Web Analytics Data Tool"
   join: sessions {
