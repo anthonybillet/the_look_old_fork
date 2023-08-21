@@ -276,7 +276,7 @@ view: order_items {
 
   dimension: sale_price_w_negatives {
     label: "Sale Price (w/ negatives)"
-    description: "Sale Prices is Negative is order us Cancelled or Returned"
+    description: "Sale Prices is Negative if order is Cancelled or Returned"
     type: number
     value_format_name: usd
     sql: CASE WHEN ${status} IN ('Cancelled', 'Returned') THEN -1*${sale_price} ELSE ${sale_price} END  ;;
