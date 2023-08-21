@@ -181,7 +181,7 @@ view: order_items {
 
   dimension_group: created {
     type: time
-    timeframes: [time, day_of_year, hour, date, week, month, year, hour_of_day, day_of_week, month_num, raw, week_of_year,month_name]
+    timeframes: [time, day_of_year, day_of_month, hour, date, week, month, year, hour_of_day, day_of_week, month_num, raw, week_of_year,month_name]
     sql: ${TABLE}.created_at ;;
 
   }
