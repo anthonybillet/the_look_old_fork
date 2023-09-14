@@ -9,11 +9,6 @@ explore: products_embed {
     field: products.brand
   }
 
-  access_filter: {
-    user_attribute: email
-    field: users.email
-  }
-
   join: inventory_items {
     view_label: "Inventory Items"
     #Left Join only brings in items that have been sold as order_item
